@@ -1,7 +1,2 @@
-<div *ngFor="let poem of poems| keyvalue: keepOrder; let i = index">
-  <mat-card>
-    <mat-card-title (click)="toggleCard(i)">{{poem.value.title | json}}</mat-card-title>
-    <mat-card-content *ngIf="cardOptions[i]">{{poem.value.content}}</mat-card-content>
-  </mat-card>
-  
-</div>
+<app-poem-list [poems]="poems"></app-poem-list>
+

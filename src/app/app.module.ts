@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PoemListComponent } from './components/poem-list/poem-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PoemListComponent
   ],
   imports: [
     BrowserModule,
