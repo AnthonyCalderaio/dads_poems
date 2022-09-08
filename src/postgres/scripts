@@ -1,0 +1,13 @@
+- To add table row:
+    
+    -----------------------------
+    INSERT INTO public."Poems"(
+	title, text)
+	VALUES ('sample title', 'sample text');
+    -----------------------------
+
+- Query all tables
+
+    -----------------------------
+    SELECT * FROM "Poems"
+    -----------------------------
