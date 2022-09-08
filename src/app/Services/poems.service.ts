@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { poems } from '../Mocks/mockPoems';
 import { ReplaySubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -11,10 +12,14 @@ export class PoemsService {
 
   viewedPoem = new ReplaySubject();
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  getPoems(){
-    return of(poems)
+  getAllPoems(){
+    return this.httpClient.get(`http://localhost:3000/poems`)
+  }
+
+  getPoemByName(poemTitle:string){
+    return this.httpClient.get(`http://localhost:3000/${poemTitle}`)
   }
 
 }

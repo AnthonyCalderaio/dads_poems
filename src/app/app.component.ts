@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   
 
   ngOnInit() {
-    // this.poemService.getPoems().subscribe((poems: Poem[]) => {
+    // this.poemService.getAllPoems().subscribe((poems: Poem[]) => {
     //   this.poems = poems;
     // })
 
