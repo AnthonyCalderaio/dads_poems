@@ -3,17 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "serve -s build",
-    "build": "ng build",
+    "start": "node server.ks",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build"
   },
   "engines": {
-    "node": "14.17.3",
-    "npm": "6.14.13"
-  },
+    "node": "12.11.1"
+    },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.1",
