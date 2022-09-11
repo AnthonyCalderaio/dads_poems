@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/dist/dads-poems'));
 
 app.get("/*", (req, res) => {
   res.sendFile(__dirname + "/dist/dads-poems/index.html");
