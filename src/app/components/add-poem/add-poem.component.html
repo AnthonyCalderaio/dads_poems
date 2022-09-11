@@ -1,0 +1,14 @@
+<div *ngIf="addedPoem">
+    <div class="successful" *ngIf="successfulPost; else unsuccessfulMessage">Added Poem successfully</div>
+    <ng-template class="unsuccessful" #unsuccessfulMessage>Unsuccessful post</ng-template>
+
+</div>
+<div fxLayout="column">
+        Title
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5" #poemTitle></textarea>
+        Content
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="30"
+            cdkAutosizeMaxRows="100" #poemText></textarea>
+        <button class="addPoemButton" (click)="addPoem(poemTitle.value, poemText.value)">Add Poem</button>
+</div>

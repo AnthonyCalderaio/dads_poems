@@ -14,12 +14,16 @@ export class PoemsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllPoems(){
+  getAllPoems() {
     return this.httpClient.get(`http://localhost:3000/poems`)
   }
 
-  getPoemByName(poemTitle:string){
+  getPoemByName(poemTitle: string) {
     return this.httpClient.get(`http://localhost:3000/${poemTitle}`)
+  }
+
+  addPoem(poemTitle: string, poemText: string) {
+    return this.httpClient.post(`http://localhost:3000/addPoem?title=${poemTitle}`,{text:poemText})
   }
 
 }

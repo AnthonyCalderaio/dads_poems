@@ -1,4 +1,4 @@
 export interface Poem {
-    title: String;
-    text: String;
+    title: string;
+    text: string;
 }

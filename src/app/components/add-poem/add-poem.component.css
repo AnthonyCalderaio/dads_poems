@@ -1,0 +1,11 @@
+.addPoemButton {
+    height:100px;
+}
+
+.successful {
+    background-color:green;
+}
+
+.unsuccessful {
+    background-color:red;
+}

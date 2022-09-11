@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -8,20 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'dads-poems';
-  // poems: Poem[];
-  // cardOptions: Array<boolean> = []
 
-  constructor() { }
 
-  
+  constructor(private router: Router) { }
 
-  ngOnInit() {
-    // this.poemService.getAllPoems().subscribe((poems: Poem[]) => {
-    //   this.poems = poems;
-    // })
+  ngOnInit() { }
 
-  }
-  // toggleCard(index: number) {
-  //   this.cardOptions[index] = !this.cardOptions[index];
-  // }
 }

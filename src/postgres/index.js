@@ -13,10 +13,15 @@ app.use(
     extended: true,
   })
 );
+
 app.use('/poems', db.getAllPoems);
 app.get("/:id", (request, response) => {
   db.getPoemByName(request.params.id, response)
 });
+
+app.post("/addPoem",(request,response) => {
+  db.addPoem(request, response)
+})
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);

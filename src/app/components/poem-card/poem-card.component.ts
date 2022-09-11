@@ -16,7 +16,7 @@ export class PoemCardComponent implements OnInit {
   ngOnInit(): void {
     let poemTitle = this.router.snapshot.paramMap.get('poemTitle')
     this.poemService.getPoemByName(poemTitle).subscribe((res: Poem) => {
-      this.activePoem = res[0].text;
+      this.activePoem = res[0];
     })
   }
 
