@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM node:14.17.3
-RUN pwd
+RUN echo "pwd"
 RUN npm install --production
 
 
