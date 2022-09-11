@@ -4,14 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --prod",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "engines": {
-    "node": "16.10"
-    },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.1",
@@ -19,6 +16,7 @@
     "@angular/common": "^14.2.1",
     "@angular/compiler": "^14.2.1",
     "@angular/core": "^14.2.1",
+    "@angular/flex-layout": "^14.0.0-beta.40",
     "@angular/forms": "^14.2.1",
     "@angular/localize": "^14.2.1",
     "@angular/material": "^14.2.1",
