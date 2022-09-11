@@ -18,11 +18,11 @@ export class PoemListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.poemService.getAllPoems().subscribe((poems: Poem[]) => {
-      console.log(poems)
-      this.poems = poems;
-    })
-    // this.poems = poems;
+    // this.poemService.getAllPoems().subscribe((poems: Poem[]) => {
+    //   console.log(poems)
+    //   this.poems = poems;
+    // })
+    this.poems = poems;
   }
 
 
