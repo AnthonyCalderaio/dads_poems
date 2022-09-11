@@ -1,1 +1,2 @@
 heroku run printenv
+deploy: $git push heroku HEAD:master
