@@ -1,7 +1,12 @@
 # syntax=docker/dockerfile:1
-# FROM node:14.17.3
-# RUN echo "pwd"
-# RUN npm install --production
+FROM node:8.9.1-alpine as node
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
 
 
 # # WORKDIR /app
