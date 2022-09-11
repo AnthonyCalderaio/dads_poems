@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { poems } from '../Mocks/mockPoems';
 import { ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
+import { GlobalVariables } from 'src/app/common/globals';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,30 @@ export class PoemsService {
   constructor(private httpClient: HttpClient) { }
 
   getAllPoems() {
-    return this.httpClient.get(`http://localhost:3000/poems`)
+    if (GlobalVariables.onlineMode) {
+      return this.httpClient.get(`http://localhost:3000/poems`)
+    } else {
+      return of(poems);
+    }
+
   }
 
   getPoemByName(poemTitle: string) {
-    return this.httpClient.get(`http://localhost:3000/${poemTitle}`)
+    if (GlobalVariables.onlineMode) {
+      return this.httpClient.get(`http://localhost:3000/${poemTitle}`)
+    }
+    else {
+      return of(poems.filter(poem => poem.title === poemTitle))
+    }
+
   }
 
   addPoem(poemTitle: string, poemText: string) {
-    return this.httpClient.post(`http://localhost:3000/addPoem?title=${poemTitle}`,{text:poemText})
+    if (GlobalVariables.onlineMode) {
+      return this.httpClient.post(`http://localhost:3000/addPoem?title=${poemTitle}`, { text: poemText })
+    } else {
+      alert('App is in offline mode')
+    }
   }
 
 }

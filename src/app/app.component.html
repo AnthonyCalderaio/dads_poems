@@ -1,1 +1,4 @@
+
+<div *ngIf="globalVariables?.onlineMode; else offlineMode">Online mode</div>
+<ng-template #offlineMode>Offline mode</ng-template>
 <router-outlet></router-outlet>

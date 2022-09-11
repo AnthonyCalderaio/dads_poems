@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Poem } from 'src/models/poem.model';
 import { PoemsService } from 'src/app/Services/poems.service';
 import { poems } from 'src/app/Mocks/mockPoems';
+import { GlobalVariables } from 'src/app/common/globals';
 
 @Component({
   selector: 'app-poem-list',
@@ -18,11 +19,13 @@ export class PoemListComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.poemService.getAllPoems().subscribe((poems: Poem[]) => {
-    //   console.log(poems)
-    //   this.poems = poems;
-    // })
-    this.poems = poems;
+    if (GlobalVariables.onlineMode) {
+      this.poemService.getAllPoems().subscribe((poems: Poem[]) => {
+        this.poems = poems;
+      })
+    } else {
+      this.poems = poems;
+    }
   }
 
 

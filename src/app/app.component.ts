@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { GlobalVariables } from 'src/app/common/globals';
 
 
 @Component({
@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'dads-poems';
+  globalVariables: any;
 
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {this.globalVariables = GlobalVariables }
 
   ngOnInit() { }
 
