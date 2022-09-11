@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Poem } from 'src/models/poem.model';
-import { PoemsService } from './Services/poems.service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,10 @@ import { PoemsService } from './Services/poems.service';
 })
 export class AppComponent implements OnInit {
   title = 'dads-poems';
-  poems: Poem[];
-  cardOptions: Array<boolean> = []
 
-  constructor(private poemService: PoemsService) { }
 
-  
+  constructor(private router: Router) { }
 
-  ngOnInit() {
-    this.poemService.getPoems().subscribe((poems: Poem[]) => {
-      this.poems = poems;
-    })
+  ngOnInit() { }
 
-  }
-  // toggleCard(index: number) {
-  //   this.cardOptions[index] = !this.cardOptions[index];
-  // }
 }

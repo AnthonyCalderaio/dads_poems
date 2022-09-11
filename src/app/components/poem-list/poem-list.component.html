@@ -1,8 +1,8 @@
-<div *ngFor="let poem of poems| keyvalue: keepOrder; let i = index">
-  <mat-card>
-    <mat-card-title>{{poem.value.title | json}}</mat-card-title>
-    <!-- <mat-card-title (click)="toggleCard(i)">{{poem.value.title | json}}</mat-card-title>
-    <mat-card-content *ngIf="cardOptions[i]">{{poem.value.content}}</mat-card-content> -->
-  </mat-card>
-  
+<h3>Poems by Anthony Calderaio Sr.</h3>
+<div class="poemsContainer">
+  <div class="poemsList" *ngFor="let poem of poems| keyvalue: keepOrder; let i = index">
+    <mat-card>
+      <mat-card-content (click)="navigateToPoem(poem.value.title)">{{poem.value.title | json}}</mat-card-content>
+    </mat-card>
+  </div>
 </div>
